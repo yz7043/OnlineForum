@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.forum</groupId>
+    <artifactId>root-project</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.7.9</version>
+        <!-- lookup parent from repository -->
+    </parent>
+
+    <modules>
+        <module>file-service</module>
+        <module>gateway-service</module>
+        <module>history-service</module>
+        <module>message-service</module>
+        <module>post_reply_service</module>
+        <module>composite-history-post-service</module>
+        <module>user_service</module>
+        <module>authentication_service</module>
+        <module>eureka_service</module>
+        <module>email_service</module>
+        <module>compPostUser_service</module>
+        <module>constant</module>
+        <module>email-comp-service</module>
+    </modules>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-parent</artifactId>
+                <version>2.7.9</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>

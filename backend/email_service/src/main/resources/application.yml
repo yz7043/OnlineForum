@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: email-service
+  mvc:
+    servlet:
+      path: /email-service # // localhost:9000/email-service/...
+
+server:
+  port: 9042
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+

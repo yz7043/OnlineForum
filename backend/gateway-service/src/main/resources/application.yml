@@ -1,0 +1,71 @@
+spring:
+  application:
+    name: gateway-service
+
+  cloud:
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:3000"
+            allowedHeaders: "*"
+            allowedMethods: "*"
+      routes:
+        - id: authentication-service
+          uri: lb://authentication-service
+          predicates:
+            - Path=/authentication-service/**
+
+        - id: email-service
+          uri: lb://email-service
+          predicates:
+            - Path=/email-service/**
+
+        - id: file-service
+          uri: lb://file-service
+          predicates:
+            - Path=/file-service/**
+
+        - id: history-service
+          uri: lb://history-service
+          predicates:
+            - Path=/history-service/**
+
+        - id: message-service
+          uri: lb://message-service
+          predicates:
+            - Path=/message-service/**
+
+        - id: post-reply-service
+          uri: lb://post-reply-service
+          predicates:
+            - Path=/post-reply-service/**
+
+        - id: user-service
+          uri: lb://user-service
+          predicates:
+            - Path=/user-service/**
+            
+        - id: email-comp-service
+          uri: lb://email-comp-service
+          predicates:
+            - Path=/email-comp-service/**
+
+        - id: composite-history-post-service
+          uri: lb://composite-history-post-service
+          predicates:
+            - Path=/composite-history-post-service/**
+
+        - id: compPostUser-service
+          uri: lb://compPostUser-service
+          predicates:
+            - Path=/compPostUser-service/**
+
+
+server:
+  port: 9000
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}

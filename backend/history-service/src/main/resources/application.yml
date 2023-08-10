@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: history-service
+  mvc:
+    servlet:
+      path: /history-service
+
+server:
+  port: 8086
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+database:
+  hibernate:
+    driver: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://forum.cshmctvztvnm.us-east-2.rds.amazonaws.com:3306/history
+    username: admin
+    password: beaconfire
+    dialect: org.hibernate.dialect.MySQL8Dialect
+    auto: update
+
+security:
+  jwt:
+    token:
+      key: ThisKeyIs32CharactersLongForHS256testtesttesttesdasdfsadsadasfadsfdfasfdsafhkjdahfkjhkhsfhdkj
